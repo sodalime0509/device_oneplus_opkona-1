@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from LE2101_11.F.16
+# All unpinned blobs below are extracted from LE2101_11.F.21
 
 # ACDB
 vendor/etc/acdbdata/adsp_avs_config.acdb
@@ -291,6 +291,7 @@ vendor/bin/cdsprpcd
 vendor/etc/init/vendor.qti.cdsprpc-service.rc
 vendor/lib/libcdsp_default_listener.so
 vendor/lib/libcdsprpc.so
+vendor/lib/libfastcrc.so
 vendor/lib/libmdsprpc.so
 vendor/lib/libsdsprpc.so
 vendor/lib/libsysmon_cdsp_skel.so
@@ -441,6 +442,25 @@ vendor/etc/qdcm_calib_data_samsung_amb655uv01_amoled_fhd+_panel_with_DSC.xml
 vendor/etc/qdcm_calib_data_samsung_amb655x_fhd_cmd_mode_dsc_dsi_panel.xml
 
 # DPM
+system_ext/bin/dpmd
+system_ext/bin/tcmd
+system_ext/etc/dpm/dpm.conf
+system_ext/etc/init/dpmd.rc
+system_ext/etc/init/tcmd.rc
+system_ext/etc/permissions/com.qti.dpmframework.xml
+system_ext/etc/permissions/dpmapi.xml
+system_ext/etc/seccomp_policy/tcmd.policy
+system_ext/framework/com.qti.dpmframework.jar
+system_ext/framework/dpmapi.jar
+system_ext/lib/vendor.qti.diaghal@1.0.so
+system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so
+system_ext/lib64/libdpmctmgr.so
+system_ext/lib64/libdpmfdmgr.so
+system_ext/lib64/libdpmframework.so
+system_ext/lib64/libdpmtcm.so
+system_ext/lib64/vendor.qti.diaghal@1.0.so
+system_ext/lib64/vendor.qti.hardware.dpmservice@1.0.so
+system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
 vendor/bin/dpmQmiMgr
 vendor/etc/init/dpmQmiMgr.rc
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
@@ -687,6 +707,9 @@ vendor/firmware/ipa_uc.b02
 vendor/firmware/ipa_uc.elf
 vendor/firmware/ipa_uc.mdt
 
+# IMS - from alioth_eea-user 12 RKQ1.200826.002 V13.0.3.0.SKHEUXM release-keys
+system_ext/priv-app/ims/ims.apk|46385ca4f276c2144e0d2dbe9aca2649f3d559ce
+
 # Iris
 odm/bin/hw/vendor.pixelworks.hardware.feature.irisfeature-service
 odm/etc/init/vendor.pixelworks.hardware.feature.irisfeature-service.rc
@@ -773,11 +796,11 @@ vendor/lib/liblistensoundmodel2.so
 vendor/lib/libmulawdec.so
 
 # Media
+odm/etc/media_codecs_c2.xml
 system_ext/lib/libmmosal.so
 system_ext/lib/libmmparser_lite.so
 system_ext/lib64/libmmosal.so
-system_ext/lib64/libmmparser_lite.so
-vendor/lib/libmmosal.so
+vendor/etc/system_properties.xml
 vendor/lib64/libmmosal.so
 
 # Media configs
@@ -849,6 +872,30 @@ vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
 vendor/lib64/libspcom.so
 
+# Perf
+vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
+vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc
+vendor/etc/perf/commonresourceconfigs.xml
+vendor/etc/perf/perfboostsconfig.xml
+vendor/etc/perf/perfconfigstore.xml
+vendor/etc/perf/targetconfig.xml
+vendor/etc/perf/targetresourceconfigs.xml
+vendor/etc/powerhint.xml
+vendor/lib/libperfconfig.so
+vendor/lib/libperfgluelayer.so
+vendor/lib/libperfioctl.so
+vendor/lib/libqti-perfd-client.so
+vendor/lib/libqti-perfd.so
+vendor/lib/libqti-util.so
+vendor/lib64/liblearningmodule.so
+vendor/lib64/libmeters.so
+vendor/lib64/libperfconfig.so
+vendor/lib64/libperfgluelayer.so
+vendor/lib64/libperfioctl.so
+vendor/lib64/libqti-perfd-client.so
+vendor/lib64/libqti-perfd.so
+vendor/lib64/libqti-util.so
+
 # Power-off alarm
 product/app/PowerOffAlarm/PowerOffAlarm.apk
 system_ext/framework/vendor.qti.hardware.alarm-V1.0-java.jar
@@ -862,6 +909,8 @@ vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so
 
 # QMI
+system/etc/permissions/privapp-permissions-qti.xml
+system/etc/sysconfig/qti_whitelist.xml
 vendor/bin/irsc_util
 vendor/bin/pd-mapper
 vendor/bin/qmipriod
@@ -905,6 +954,11 @@ vendor/lib64/libqmiservices.so
 odm/bin/oemnvbkdaemon
 odm/lib64/vendor.oplus.hardware.appradio@1.0.so
 odm/lib64/vendor.oplus.hardware.radio@1.0.so
+system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
+system_ext/etc/permissions/qcrilhook.xml
+system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml
+system_ext/framework/qcrilhook.jar
+system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/app/IWlanService/IWlanService.apk
 vendor/bin/hw/qcrild
 vendor/bin/ATFWD-daemon
@@ -1005,6 +1059,49 @@ vendor/radio/qcril_database/qcril.db
 
 # Radio - IMS
 odm/lib64/vendor.oplus.hardware.ims@1.0.so
+system_ext/app/imssettings/imssettings.apk
+system_ext/app/uceShimService/uceShimService.apk
+system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
+system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml
+system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.2-java.xml
+system_ext/etc/permissions/com.qualcomm.qti.imscmservice.xml
+system_ext/framework/com.qualcomm.qti.imscmservice-V2.0-java.jar
+system_ext/framework/com.qualcomm.qti.imscmservice-V2.1-java.jar
+system_ext/framework/com.qualcomm.qti.imscmservice-V2.2-java.jar
+system_ext/framework/com.qualcomm.qti.uceservice-V2.0-java.jar
+system_ext/framework/com.qualcomm.qti.uceservice-V2.1-java.jar
+system_ext/framework/com.qualcomm.qti.uceservice-V2.2-java.jar
+system_ext/framework/com.qualcomm.qti.uceservice-V2.3-java.jar
+system_ext/framework/vendor.qti.ims.callinfo-V1.0-java.jar
+system_ext/framework/vendor.qti.ims.factory-V1.0-java.jar
+system_ext/framework/vendor.qti.ims.factory-V1.1-java.jar
+system_ext/framework/vendor.qti.ims.factory-V2.0-java.jar
+system_ext/framework/vendor.qti.ims.factory-V2.1-java.jar
+system_ext/framework/vendor.qti.ims.factory-V2.2-java.jar
+system_ext/framework/vendor.qti.ims.rcsconfig-V1.0-java.jar
+system_ext/lib64/com.qualcomm.qti.imscmservice@1.0.so
+system_ext/lib64/com.qualcomm.qti.imscmservice@2.0.so
+system_ext/lib64/com.qualcomm.qti.imscmservice@2.1.so
+system_ext/lib64/com.qualcomm.qti.imscmservice@2.2.so
+system_ext/lib64/com.qualcomm.qti.uceservice@2.0.so
+system_ext/lib64/com.qualcomm.qti.uceservice@2.1.so
+system_ext/lib64/com.qualcomm.qti.uceservice@2.2.so
+system_ext/lib64/com.qualcomm.qti.uceservice@2.3.so
+system_ext/lib64/lib-imsvideocodec.so
+system_ext/lib64/lib-imsvt.so
+system_ext/lib64/lib-imsvtextutils.so
+system_ext/lib64/lib-imsvtutils.so
+system_ext/lib64/libdiag_system.so
+system_ext/lib64/libimscamera_jni.so
+system_ext/lib64/libimsmedia_jni.so
+system_ext/lib64/vendor.qti.ims.callinfo@1.0.so
+system_ext/lib64/vendor.qti.ims.factory@1.0.so
+system_ext/lib64/vendor.qti.ims.factory@1.1.so
+system_ext/lib64/vendor.qti.ims.factory@2.0.so
+system_ext/lib64/vendor.qti.ims.factory@2.1.so
+system_ext/lib64/vendor.qti.ims.factory@2.2.so
+system_ext/lib64/vendor.qti.ims.rcsconfig@1.0.so
+system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
