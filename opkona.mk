@@ -18,11 +18,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from opkona device
+# Inherit from lemonades device
 $(call inherit-product, device/oneplus/opkona/device.mk)
-
-# Inherit from the Flamingo configuration.
-$(call inherit-product, vendor/zephyrus/target/product/zephyrus-target.mk)
 
 PRODUCT_NAME := opkona
 PRODUCT_DEVICE := opkona
@@ -31,3 +28,12 @@ PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := kona
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
+
+CUSTOM_BUILD_TYPE := Official
+TARGET_SUPPORTS_QUICK_TAP := true
+WITH_GMS := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+USE_PIXEL_CHARGER_IMAGES := true
+TARGET_SUPPORTS_CALL_RECORDING := true
