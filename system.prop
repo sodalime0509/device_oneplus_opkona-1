@@ -33,22 +33,6 @@ sys.qca1530=detect
 # Kernel
 ro.kernel.qemu.gles=0
 
-# Media
-debug.stagefright.ccodec=1
-media.aac_51_output_enabled=true
-media.stagefright.enable-aac=true
-media.stagefright.enable-fma2dp=true
-media.stagefright.enable-http=true
-media.stagefright.enable-player=true
-media.stagefright.enable-qcp=true
-media.stagefright.enable-scan=true
-media.stagefright.thumbnail.prefer_hw_codecs=true
-media.settings.xml=/vendor/etc/media_profiles_vendor.xml
-mmp.enable.3g2=true
-persist.mm.enable.prefetch=true
-ro.media.recorder-max-base-layer-fps=60
-vendor.mm.enable.qcom_parser=45987058
-
 # Radio
 DEVICE_PROVISIONED=1
 ril.subscription.types=NV,RUIM
